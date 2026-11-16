@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="foryou_headline">Mantente al día en Android</string>
+    <string name="foryou_subheadline">Artículos, podcasts y notas de versión para ingenieros</string>
+    <string name="foryou_dark_headline">Tema oscuro moderno</string>
+    <string name="foryou_dark_subheadline">Lectura cómoda de día y de noche con contraste dinámico</string>
+    <string name="foryou_interests_prompt">¿Qué te interesa?</string>
+    <string name="foryou_topic_architecture">Arquitectura</string>
+    <string name="foryou_topic_kmp">Kotlin Multiplataforma</string>
+    <string name="foryou_topic_performance">Rendimiento</string>
+    <string name="foryou_news_1_title">Now in Android: 110 - Android 16 Developer Preview y Compose 1.8</string>
+    <string name="foryou_news_1_content">Explora el nuevo selector de fotos, registros de salud y la gestura atrás predictiva.</string>
+    <string name="foryou_news_1_date">Octubre 2026</string>
+    <string name="foryou_news_2_title">Arquitectura Android moderna: offline-first con Jetpack Room y Flow</string>
+    <string name="foryou_news_2_content">Análisis a fondo de estrategias de caché reales y sincronización reactiva.</string>
+    <string name="foryou_news_2_date">Octubre 2026</string>
+    <string name="foryou_news_3_title">Interfaces de alto rendimiento con Layoutlib y Preview Renderer</string>
+    <string name="foryou_news_3_content">Capturas perfectas de Google Play y App Store automatizadas al compilar.</string>
+    <string name="foryou_news_3_date">Septiembre 2026</string>
+</resources>

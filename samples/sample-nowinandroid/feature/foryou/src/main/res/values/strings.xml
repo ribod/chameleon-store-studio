@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="foryou_headline">Stay Ahead in Android</string>
+    <string name="foryou_subheadline">Articles, podcasts, and release notes curated for engineers</string>
+    <string name="foryou_dark_headline">Modern Dark Theme</string>
+    <string name="foryou_dark_subheadline">Comfortable reading day and night with dynamic contrast</string>
+    <string name="foryou_interests_prompt">What are you interested in?</string>
+    <string name="foryou_topic_architecture">Architecture</string>
+    <string name="foryou_topic_kmp">Kotlin Multiplatform</string>
+    <string name="foryou_topic_performance">Performance</string>
+    <string name="foryou_news_1_title">Now in Android: 110 - Android 16 Developer Preview &amp; Compose 1.8</string>
+    <string name="foryou_news_1_content">Explore the new photo picker, health records, and predictive back transitions.</string>
+    <string name="foryou_news_1_date">October 2026</string>
+    <string name="foryou_news_2_title">Modern Android Architecture: Offline-first with Jetpack Room &amp; Flow</string>
+    <string name="foryou_news_2_content">Deep dive into real-world caching strategies and reactive synchronization.</string>
+    <string name="foryou_news_2_date">October 2026</string>
+    <string name="foryou_news_3_title">Building High-Performance UIs with Layoutlib &amp; Preview Renderer</string>
+    <string name="foryou_news_3_content">Automating pixel-perfect Google Play and App Store screenshots at build time.</string>
+    <string name="foryou_news_3_date">September 2026</string>
+</resources>

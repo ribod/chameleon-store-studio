@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bookmarks_headline">Lee donde sea, sin conexión</string>
+    <string name="bookmarks_subheadline">Guarda artículos en tu lista de lectura con acceso offline inmediato</string>
+    <string name="bookmarks_title">Artículos guardados</string>
+    <string name="bookmarks_reading_list">Tu lista de lectura (%d)</string>
+    <string name="bookmarks_1_title">Compose Multiplatform 1.8: estabilidad en iOS y Desktop</string>
+    <string name="bookmarks_1_desc">Comparte lógica de negocio e interfaz entre Android e iOS sin fricción.</string>
+    <string name="bookmarks_1_date">Guardado ayer</string>
+    <string name="bookmarks_2_title">Pipelines de ficha de tienda automatizados con Compose Store Studio</string>
+    <string name="bookmarks_2_desc">Convierte tus previews Composable en capturas validadas y localizadas.</string>
+    <string name="bookmarks_2_topic">Herramientas</string>
+    <string name="bookmarks_2_date">Guardado hace 3 días</string>
+    <string name="bookmarks_3_title">Análisis de la arquitectura de renderizado headless de Layoutlib</string>
+    <string name="bookmarks_3_desc">Marcos vectoriales perfectos renderizados directamente desde Gradle.</string>
+    <string name="bookmarks_3_topic">Arquitectura</string>
+    <string name="bookmarks_3_date">Guardado la semana pasada</string>
+</resources>

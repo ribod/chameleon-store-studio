@@ -1,0 +1,41 @@
+name: Bug report
+description: Something doesn't render, export, validate or publish as expected
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you expected and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reproduce
+      description: The task you ran and, if possible, a minimal `@StoreScreenshot` composable that shows the problem.
+      render: kotlin
+  - type: textarea
+    id: doctor
+    attributes:
+      label: Output of storeDoctor
+      description: Run `./gradlew :app:storeDoctor` (use your module) and paste the output.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: >
+        The error with `--stacktrace`. For rendering problems, the renderer log from
+        `build/store/render/work/` or `build/store/render/robolectric-work/`.
+      render: text
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: Store Studio, Gradle, AGP, Kotlin, KSP and, for the IDE plugin, the IDE version.
+      placeholder: "Store Studio 0.1.0, Gradle 9.3.1, AGP 9.1.1, Kotlin 2.4.10, KSP 2.3.12"
+    validations:
+      required: true

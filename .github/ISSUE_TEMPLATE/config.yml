@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation
+    url: https://ribod.github.io/chameleon-store-studio/
+    about: Guides, configuration reference and troubleshooting.
+  - name: Store rule changed
+    url: https://ribod.github.io/chameleon-store-studio/validation/
+    about: If a store changed its requirements, open a bug report with a link to the new rule.

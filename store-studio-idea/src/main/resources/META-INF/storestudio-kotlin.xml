@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<idea-plugin>
+    <!-- Loaded only when the Kotlin plugin is present -->
+    <extensions defaultExtensionNs="dev.ribod.storestudio.idea">
+        <sourceResolver implementation="dev.ribod.storestudio.idea.navigation.KotlinStoreSourceResolver"/>
+    </extensions>
+</idea-plugin>

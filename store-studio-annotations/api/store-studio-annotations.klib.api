@@ -1,0 +1,66 @@
+// Klib ABI Dump
+// Targets: [iosArm64, iosSimulatorArm64, iosX64]
+// Rendering settings:
+// - Signature version: 2
+// - Show manifest properties: true
+// - Show declarations: true
+
+// Library unique name: <dev.ribod.storestudio:store-studio-annotations>
+open annotation class dev.ribod.storestudio.annotations/StoreFeatureGraphic : kotlin/Annotation { // dev.ribod.storestudio.annotations/StoreFeatureGraphic|null[0]
+    constructor <init>(kotlin/String, kotlin/String = ..., kotlin/Array<kotlin/String> = ...) // dev.ribod.storestudio.annotations/StoreFeatureGraphic.<init>|<init>(kotlin.String;kotlin.String;kotlin.Array<kotlin.String>){}[0]
+
+    final val id // dev.ribod.storestudio.annotations/StoreFeatureGraphic.id|{}id[0]
+        final fun <get-id>(): kotlin/String // dev.ribod.storestudio.annotations/StoreFeatureGraphic.id.<get-id>|<get-id>(){}[0]
+    final val locales // dev.ribod.storestudio.annotations/StoreFeatureGraphic.locales|{}locales[0]
+        final fun <get-locales>(): kotlin/Array<kotlin/String> // dev.ribod.storestudio.annotations/StoreFeatureGraphic.locales.<get-locales>|<get-locales>(){}[0]
+    final val name // dev.ribod.storestudio.annotations/StoreFeatureGraphic.name|{}name[0]
+        final fun <get-name>(): kotlin/String // dev.ribod.storestudio.annotations/StoreFeatureGraphic.name.<get-name>|<get-name>(){}[0]
+}
+
+open annotation class dev.ribod.storestudio.annotations/StoreScreenshot : kotlin/Annotation { // dev.ribod.storestudio.annotations/StoreScreenshot|null[0]
+    constructor <init>(kotlin/String, kotlin/Int = ..., kotlin/String = ..., kotlin/Array<dev.ribod.storestudio.annotations/DeviceFamily> = ..., kotlin/Array<dev.ribod.storestudio.annotations/StoreTarget> = ..., kotlin/Array<kotlin/String> = ...) // dev.ribod.storestudio.annotations/StoreScreenshot.<init>|<init>(kotlin.String;kotlin.Int;kotlin.String;kotlin.Array<dev.ribod.storestudio.annotations.DeviceFamily>;kotlin.Array<dev.ribod.storestudio.annotations.StoreTarget>;kotlin.Array<kotlin.String>){}[0]
+
+    final val devices // dev.ribod.storestudio.annotations/StoreScreenshot.devices|{}devices[0]
+        final fun <get-devices>(): kotlin/Array<dev.ribod.storestudio.annotations/DeviceFamily> // dev.ribod.storestudio.annotations/StoreScreenshot.devices.<get-devices>|<get-devices>(){}[0]
+    final val id // dev.ribod.storestudio.annotations/StoreScreenshot.id|{}id[0]
+        final fun <get-id>(): kotlin/String // dev.ribod.storestudio.annotations/StoreScreenshot.id.<get-id>|<get-id>(){}[0]
+    final val locales // dev.ribod.storestudio.annotations/StoreScreenshot.locales|{}locales[0]
+        final fun <get-locales>(): kotlin/Array<kotlin/String> // dev.ribod.storestudio.annotations/StoreScreenshot.locales.<get-locales>|<get-locales>(){}[0]
+    final val name // dev.ribod.storestudio.annotations/StoreScreenshot.name|{}name[0]
+        final fun <get-name>(): kotlin/String // dev.ribod.storestudio.annotations/StoreScreenshot.name.<get-name>|<get-name>(){}[0]
+    final val order // dev.ribod.storestudio.annotations/StoreScreenshot.order|{}order[0]
+        final fun <get-order>(): kotlin/Int // dev.ribod.storestudio.annotations/StoreScreenshot.order.<get-order>|<get-order>(){}[0]
+    final val targets // dev.ribod.storestudio.annotations/StoreScreenshot.targets|{}targets[0]
+        final fun <get-targets>(): kotlin/Array<dev.ribod.storestudio.annotations/StoreTarget> // dev.ribod.storestudio.annotations/StoreScreenshot.targets.<get-targets>|<get-targets>(){}[0]
+}
+
+final enum class dev.ribod.storestudio.annotations/DeviceFamily : kotlin/Enum<dev.ribod.storestudio.annotations/DeviceFamily> { // dev.ribod.storestudio.annotations/DeviceFamily|null[0]
+    enum entry AUTO // dev.ribod.storestudio.annotations/DeviceFamily.AUTO|null[0]
+    enum entry DESKTOP // dev.ribod.storestudio.annotations/DeviceFamily.DESKTOP|null[0]
+    enum entry PHONE // dev.ribod.storestudio.annotations/DeviceFamily.PHONE|null[0]
+    enum entry TABLET // dev.ribod.storestudio.annotations/DeviceFamily.TABLET|null[0]
+    enum entry TABLET_7 // dev.ribod.storestudio.annotations/DeviceFamily.TABLET_7|null[0]
+    enum entry TV // dev.ribod.storestudio.annotations/DeviceFamily.TV|null[0]
+    enum entry WATCH // dev.ribod.storestudio.annotations/DeviceFamily.WATCH|null[0]
+    enum entry XR // dev.ribod.storestudio.annotations/DeviceFamily.XR|null[0]
+
+    final val entries // dev.ribod.storestudio.annotations/DeviceFamily.entries|#static{}entries[0]
+        final fun <get-entries>(): kotlin.enums/EnumEntries<dev.ribod.storestudio.annotations/DeviceFamily> // dev.ribod.storestudio.annotations/DeviceFamily.entries.<get-entries>|<get-entries>#static(){}[0]
+
+    final fun valueOf(kotlin/String): dev.ribod.storestudio.annotations/DeviceFamily // dev.ribod.storestudio.annotations/DeviceFamily.valueOf|valueOf#static(kotlin.String){}[0]
+    final fun values(): kotlin/Array<dev.ribod.storestudio.annotations/DeviceFamily> // dev.ribod.storestudio.annotations/DeviceFamily.values|values#static(){}[0]
+}
+
+final enum class dev.ribod.storestudio.annotations/StoreTarget : kotlin/Enum<dev.ribod.storestudio.annotations/StoreTarget> { // dev.ribod.storestudio.annotations/StoreTarget|null[0]
+    enum entry APP_STORE // dev.ribod.storestudio.annotations/StoreTarget.APP_STORE|null[0]
+    enum entry PLAY_STORE // dev.ribod.storestudio.annotations/StoreTarget.PLAY_STORE|null[0]
+
+    final val entries // dev.ribod.storestudio.annotations/StoreTarget.entries|#static{}entries[0]
+        final fun <get-entries>(): kotlin.enums/EnumEntries<dev.ribod.storestudio.annotations/StoreTarget> // dev.ribod.storestudio.annotations/StoreTarget.entries.<get-entries>|<get-entries>#static(){}[0]
+
+    final fun valueOf(kotlin/String): dev.ribod.storestudio.annotations/StoreTarget // dev.ribod.storestudio.annotations/StoreTarget.valueOf|valueOf#static(kotlin.String){}[0]
+    final fun values(): kotlin/Array<dev.ribod.storestudio.annotations/StoreTarget> // dev.ribod.storestudio.annotations/StoreTarget.values|values#static(){}[0]
+}
+
+final val dev.ribod.storestudio.annotations/naturalDisplayOrder // dev.ribod.storestudio.annotations/naturalDisplayOrder|@dev.ribod.storestudio.annotations.DeviceFamily{}naturalDisplayOrder[0]
+    final fun (dev.ribod.storestudio.annotations/DeviceFamily).<get-naturalDisplayOrder>(): kotlin/Int // dev.ribod.storestudio.annotations/naturalDisplayOrder.<get-naturalDisplayOrder>|<get-naturalDisplayOrder>@dev.ribod.storestudio.annotations.DeviceFamily(){}[0]

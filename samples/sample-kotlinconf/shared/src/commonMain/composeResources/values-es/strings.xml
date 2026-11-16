@@ -1,0 +1,13 @@
+<resources>
+    <string name="agenda_headline">Horario del Congreso</string>
+    <string name="agenda_subheadline">Conferencias magistrales, sesiones técnicas y oradores en vivo</string>
+    <string name="speakers_headline">Oradores de Clase Mundial</string>
+    <string name="speakers_subheadline">Aprende directamente de los creadores y referentes de Kotlin</string>
+    <string name="session_headline">Detalle de Sesiones</string>
+    <string name="session_subheadline">Explora resúmenes detallados, biografías de ponentes y mapas del recinto</string>
+    <string name="light_headline">Tema Claro Elegante</string>
+    <string name="light_subheadline">Optimizado para una lectura cómoda en salas de conferencias iluminadas</string>
+    <string name="promo_showcase">APP OFICIAL DE LA COMUNIDAD</string>
+    <string name="promo_description">El encuentro principal de desarrolladores para aprender, conectar y explorar el ecosistema global de Kotlin.</string>
+    <string name="promo_edition">COPENHAGUE 2026</string>
+</resources>

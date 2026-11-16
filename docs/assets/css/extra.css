@@ -1,0 +1,58 @@
+/* Showcase strip of exported store screenshots */
+.store-showcase > p {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  margin: 0;
+  padding: 0.5rem 0 1rem;
+}
+
+.store-showcase img {
+  height: 20rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.18);
+  flex: none;
+}
+
+.store-showcase--small img {
+  height: 15rem;
+}
+
+/* Wide report and IDE screenshots */
+.doc-screenshot img,
+img.doc-screenshot {
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2);
+}
+
+/* Placeholder shown until an IDE screenshot is provided */
+.screenshot-pending {
+  border: 2px dashed var(--md-default-fg-color--lighter);
+  border-radius: 0.5rem;
+  padding: 2.5rem 1rem;
+  text-align: center;
+  color: var(--md-default-fg-color--light);
+}
+
+/* Keep wide configuration tables readable */
+.md-typeset table:not([class]) td:first-child code {
+  white-space: nowrap;
+}
+
+/* Chameleon green palette matching docs/assets/img/logo.svg */
+:root,
+[data-md-color-scheme="default"],
+[data-md-color-scheme="default"][data-md-color-primary],
+[data-md-color-scheme="default"][data-md-color-accent] {
+  --md-typeset-a-color: #0E5A36;
+  --md-accent-fg-color: #157A48;
+  --md-accent-fg-color--transparent: rgba(14, 90, 54, 0.1);
+}
+
+[data-md-color-scheme="slate"],
+[data-md-color-scheme="slate"][data-md-color-primary],
+[data-md-color-scheme="slate"][data-md-color-accent] {
+  --md-typeset-a-color: #23AA67;
+  --md-accent-fg-color: #30B975;
+  --md-accent-fg-color--transparent: rgba(48, 185, 117, 0.12);
+}

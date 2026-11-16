@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<idea-plugin>
+    <id>dev.ribod.storestudio.idea</id>
+    <name>Chameleon Store Studio</name>
+    <vendor email="ricardo.domber96@gmail.com" url="https://github.com/ribod">ribod</vendor>
+
+    <description><![CDATA[
+        Visual store asset and marketing screenshot workbench for <b>Jetpack Compose</b> and <b>Compose Multiplatform</b>.
+        <br/><br/>
+        <b>Features:</b>
+        <ul>
+            <li><b>Interactive Screenshot Gallery:</b> Browse rendered marketing assets in authentic store aspect ratios with multi-module, store, device, and locale filters.</li>
+            <li><b>Instant Jump-to-Source:</b> Double-click any thumbnail to navigate straight to the <code>@StoreScreenshot</code> composable in Kotlin.</li>
+            <li><b>Simulated Store Product Page:</b> Preview live Google Play and Apple App Store listings with click-to-edit metadata navigation.</li>
+            <li><b>Interactive Visual Diff:</b> Review visual changes against baselines with a Before/After split curtain and semantic text drift inspection.</li>
+            <li><b>Store Compliance Explorer:</b> Audit validation warnings and errors with direct remediation hints.</li>
+            <li><b>Safety-First Publishing:</b> Run dry-runs and deploy directly to Google Play Console and App Store Connect from Gradle.</li>
+        </ul>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <!-- Optional: jumping to @StoreScreenshot composables via Kotlin PSI.
+         Keeping it optional allows the plugin to load in any IDE regardless of bundled Kotlin plugin versions. -->
+    <depends optional="true" config-file="storestudio-kotlin.xml">org.jetbrains.kotlin</depends>
+
+    <!-- Must live in the main descriptor: the Kotlin plugin checks it before loading the optional config -->
+    <extensions defaultExtensionNs="org.jetbrains.kotlin">
+        <supportsKotlinPluginMode supportsK1="true" supportsK2="true"/>
+    </extensions>
+
+    <extensionPoints>
+        <extensionPoint
+            qualifiedName="dev.ribod.storestudio.idea.sourceResolver"
+            interface="dev.ribod.storestudio.idea.navigation.StoreSourceResolver"
+            dynamic="true"/>
+    </extensionPoints>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <notificationGroup id="Compose Store Studio" displayName="Chameleon Store Studio" displayType="BALLOON"/>
+
+        <toolWindow
+            id="Store Studio"
+            anchor="right"
+            factoryClass="dev.ribod.storestudio.idea.StoreStudioToolWindowFactory"
+            icon="/icons/storestudio.svg"/>
+
+        <projectConfigurable
+            parentId="tools"
+            instance="dev.ribod.storestudio.idea.settings.StoreStudioSettingsConfigurable"
+            id="dev.ribod.storestudio.idea.settings.StoreStudioSettingsConfigurable"
+            displayName="Chameleon Store Studio"
+            nonDefaultProject="true"/>
+    </extensions>
+</idea-plugin>

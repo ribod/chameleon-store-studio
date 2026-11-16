@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="interests_headline">Sigue lo que te importa</string>
+    <string name="interests_subheadline">Personaliza tus novedades sobre tus tecnologías Android favoritas</string>
+    <string name="interests_title">Intereses</string>
+    <string name="interests_prompt">Sigue temas para personalizar tu feed</string>
+    <string name="interests_1_desc">Toolkit declarativo moderno para interfaces Android nativas y multiplataforma.</string>
+    <string name="interests_2_name">Kotlin Multiplataforma</string>
+    <string name="interests_2_desc">Comparte lógica de negocio e interfaz Compose entre móvil y escritorio.</string>
+    <string name="interests_3_name">Rendimiento en Android</string>
+    <string name="interests_3_desc">Profiling, Baseline Profiles, renderizado headless y reducción de jank.</string>
+    <string name="interests_4_name">Arquitectura y patrones</string>
+    <string name="interests_4_desc">Flujo de datos unidireccional, repositorios reactivos y escalabilidad modular.</string>
+    <string name="interests_btn_following">Siguiendo</string>
+    <string name="interests_btn_follow">Seguir</string>
+</resources>

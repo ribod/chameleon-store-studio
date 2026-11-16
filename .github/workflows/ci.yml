@@ -1,0 +1,101 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_call:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  build:
+    name: Build and test (JDK ${{ matrix.java }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [17, 21] # 17 is the minimum supported JDK
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java }}
+
+      # Caches Gradle (written on main, read on pull requests) and validates the wrapper
+      - uses: gradle/actions/setup-gradle@v6
+
+      # Formatting, unit and TestKit tests, and the public API dumps (checkKotlinAbi)
+      - name: Check
+        run: ./gradlew check --stacktrace
+
+      # Kotlin/Native can produce Apple klibs on any host, so the iOS variants that KMP consumers
+      # depend on are compiled here instead of on a macOS runner.
+      # A host that can't build them skips the tasks silently, hence the explicit check below.
+      - name: Compile the iOS targets
+        if: matrix.java == 17
+        run: >
+          ./gradlew --stacktrace
+          :store-studio-annotations:compileKotlinIosArm64
+          :store-studio-annotations:compileKotlinIosSimulatorArm64
+          :store-studio-annotations:compileKotlinIosX64
+          :store-studio-runtime:compileKotlinIosArm64
+          :store-studio-runtime:compileKotlinIosSimulatorArm64
+
+      - name: Check that the iOS klibs were produced
+        if: matrix.java == 17
+        run: |
+          missing=0
+          for target in annotations:iosArm64 annotations:iosSimulatorArm64 annotations:iosX64 \
+              runtime:iosArm64 runtime:iosSimulatorArm64; do
+            module="store-studio-${target%%:*}"
+            name="${target##*:}"
+            if [ -d "$module/build/classes/kotlin/$name/main/klib/$module" ]; then
+              echo "Compiled $module for $name"
+            else
+              echo "::error::$module was not compiled for $name: this host skipped the Apple target"
+              missing=1
+            fi
+          done
+          exit "$missing"
+
+      - name: Upload test reports
+        if: failure()
+        uses: actions/upload-artifact@v6
+        with:
+          name: test-reports-jdk${{ matrix.java }}
+          path: "**/build/reports/tests/"
+          retention-days: 14
+
+  ide-plugin:
+    name: IDE plugin
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 21 # required by the IntelliJ Platform the plugin builds against
+
+      - uses: gradle/actions/setup-gradle@v6
+
+      # A separate Gradle build. Check IDE compatibility locally with `./gradlew -p store-studio-idea verifyPlugin`
+      - name: Check and build
+        run: ./gradlew -p store-studio-idea check buildPlugin --stacktrace
+
+      - name: Upload plugin zip
+        uses: actions/upload-artifact@v6
+        with:
+          name: store-studio-idea
+          path: store-studio-idea/build/distributions/*.zip
+          retention-days: 14

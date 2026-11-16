@@ -1,0 +1,13 @@
+<resources>
+    <string name="agenda_headline">Conference Schedule</string>
+    <string name="agenda_subheadline">Keynotes, technical tracks, and live speaker sessions</string>
+    <string name="speakers_headline">World-Class Speakers</string>
+    <string name="speakers_subheadline">Learn directly from Kotlin creators and industry leaders</string>
+    <string name="session_headline">Session Deep-Dives</string>
+    <string name="session_subheadline">Explore detailed abstracts, speaker bios, and venue maps</string>
+    <string name="light_headline">Clean Light Theme</string>
+    <string name="light_subheadline">Optimized for readability in bright outdoor convention halls</string>
+    <string name="promo_showcase">OFFICIAL COMMUNITY APP</string>
+    <string name="promo_description">The premier gathering for developers to learn, connect, and explore the Kotlin ecosystem worldwide.</string>
+    <string name="promo_edition">COPENHAGEN 2026</string>
+</resources>

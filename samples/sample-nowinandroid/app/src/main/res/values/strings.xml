@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="promo_showcase">OFFICIAL SHOWCASE</string>
+    <string name="promo_title">Now in Android</string>
+    <string name="promo_description">Curated engineering insights, architecture patterns, and modern Android development updates.</string>
+    <string name="promo_edition">2026 EDITION</string>
+</resources>

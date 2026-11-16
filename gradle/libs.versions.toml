@@ -1,0 +1,106 @@
+[versions]
+# Core Toolchain
+kotlin = "2.4.10"
+ksp = "2.3.12"
+kotlinxSerialization = "1.11.0"
+agp = "9.1.1"
+
+# Compose
+composeBom = "2026.05.01"
+composeMultiplatform = "1.11.0"
+composeMultiplatformMaterial3 = "1.9.0"
+activityCompose = "1.12.0"
+
+# Rendering engines (defaults applied by the Gradle plugin to consumer projects)
+layoutlib = "16.2.1"
+composePreviewRenderer = "0.0.1-alpha15"
+composeUiHostTooling = "1.7.0"
+
+# Testing & Secondary Engine
+robolectric = "4.16.1"
+junit4 = "4.13.2"
+androidxTestCore = "1.6.1"
+
+# Network & Publishing (App Store Connect API)
+ktor = "3.1.1"
+sandwich = "2.2.2"
+ddPlist = "1.30"
+
+# IDE Plugin
+kotlinIdea = "2.3.0"
+intellijPlatform = "2.19.0"
+intellijIdea = "2025.2"
+
+# Code Quality
+spotless = "8.6.0"
+
+# Publishing
+vanniktechMavenPublish = "0.36.0"
+
+[libraries]
+vanniktech-maven-publish-gradle-plugin = { module = "com.vanniktech:gradle-maven-publish-plugin", version.ref = "vanniktechMavenPublish" }
+# Kotlin & KSP
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+ksp-api = { module = "com.google.devtools.ksp:symbol-processing-api", version.ref = "ksp" }
+ksp-gradle-plugin = { module = "com.google.devtools.ksp:symbol-processing-gradle-plugin", version.ref = "ksp" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
+
+# Android Gradle Plugin
+agp-gradle-plugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+
+# AndroidX Core & Lifecycle
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
+androidx-test-core = { module = "androidx.test:core", version.ref = "androidxTestCore" }
+
+# Jetpack Compose BOM
+compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
+compose-ui = { module = "androidx.compose.ui:ui" }
+compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
+compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
+compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
+compose-foundation = { module = "androidx.compose.foundation:foundation" }
+compose-material3 = { module = "androidx.compose.material3:material3" }
+
+# Compose Multiplatform
+compose-multiplatform-gradle-plugin = { module = "org.jetbrains.compose:compose-gradle-plugin", version.ref = "composeMultiplatform" }
+compose-multiplatform-runtime = { module = "org.jetbrains.compose.runtime:runtime", version.ref = "composeMultiplatform" }
+compose-multiplatform-foundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "composeMultiplatform" }
+compose-multiplatform-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "composeMultiplatform" }
+compose-multiplatform-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "composeMultiplatformMaterial3" }
+
+# Networking & Store APIs (Ktor + Sandwich)
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+sandwich-ktor = { module = "com.github.skydoves:sandwich-ktor", version.ref = "sandwich" }
+dd-plist = { module = "com.googlecode.plist:dd-plist", version.ref = "ddPlist" }
+sandwich-test = { module = "com.github.skydoves:sandwich-test", version.ref = "sandwich" }
+
+# Testing & Robolectric
+junit = { module = "junit:junit", version.ref = "junit4" }
+robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
+
+# Gradle Plugins as dependencies for build-logic
+spotless-gradle-plugin = { module = "com.diffplug.spotless:spotless-plugin-gradle", version.ref = "spotless" }
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-jvm-idea = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinIdea" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+compose-multiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiplatform" }
+intellij-platform = { id = "org.jetbrains.intellij.platform", version.ref = "intellijPlatform" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+
+# Plugins defined by this project
+dev-ribod-storestudio-spotless = { id = "dev.ribod.storestudio.spotless" }
+dev-ribod-storestudio-jvm-library = { id = "dev.ribod.storestudio.jvm.library" }
+dev-ribod-storestudio-kmp-library = { id = "dev.ribod.storestudio.kmp.library" }
+dev-ribod-storestudio-android-library-compose = { id = "dev.ribod.storestudio.android.library.compose" }
+dev-ribod-storestudio-gradle-plugin = { id = "dev.ribod.storestudio.gradle.plugin" }
+dev-ribod-storestudio-publish = { id = "dev.ribod.storestudio.publish" }

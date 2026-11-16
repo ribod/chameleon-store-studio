@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="interests_headline">Follow What Matters</string>
+    <string name="interests_subheadline">Customize your engineering updates across your favorite Android technologies</string>
+    <string name="interests_title">Interests</string>
+    <string name="interests_prompt">Follow topics to personalize your feed</string>
+    <string name="interests_1_desc">Modern declarative toolkit for building native Android and multiplatform UIs.</string>
+    <string name="interests_2_name">Kotlin Multiplatform</string>
+    <string name="interests_2_desc">Share business logic and Compose UI seamlessly across mobile and desktop.</string>
+    <string name="interests_3_name">Android Performance</string>
+    <string name="interests_3_desc">Profiling, Baseline Profiles, Layoutlib headless rendering and jank reduction.</string>
+    <string name="interests_4_name">Architecture &amp; Patterns</string>
+    <string name="interests_4_desc">Unidirectional data flow, reactive repositories, and modular scalability.</string>
+    <string name="interests_btn_following">Following</string>
+    <string name="interests_btn_follow">Follow</string>
+</resources>

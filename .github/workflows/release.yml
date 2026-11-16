@@ -1,0 +1,120 @@
+name: Release
+
+# Publishing a GitHub Release (tag vX.Y.Z) publishes that version: the libraries and the Gradle plugin
+# to Maven Central, and the IDE plugin zip to the release. Run it manually for a dry run that
+# publishes to Maven Local only.
+on:
+  release:
+    types: [released]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  checks:
+    name: Checks
+    uses: ./.github/workflows/ci.yml
+
+  publish:
+    name: Publish to Maven Central
+    needs: [checks]
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    # Secrets live only in this environment, which can require a manual approval
+    environment: release
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: gradle/actions/setup-gradle@v6
+        with:
+          cache-disabled: true
+
+      - name: Check that the version matches the release tag
+        if: github.event_name == 'release'
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          version=$(sed -n 's/^version=//p' gradle.properties)
+          ide_version=$(sed -n 's/^version = "\(.*\)"$/\1/p' store-studio-idea/build.gradle.kts)
+          if [ "$TAG" != "v$version" ] || [ "$ide_version" != "$version" ]; then
+            echo "::error::Tag $TAG, gradle.properties $version and IDE plugin $ide_version must match"
+            exit 1
+          fi
+
+      - name: Check publishing secrets
+        if: github.event_name == 'release'
+        env:
+          MAVEN_CENTRAL_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          MAVEN_CENTRAL_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+          SIGNING_KEY: ${{ secrets.SIGNING_KEY }}
+          SIGNING_KEY_ID: ${{ secrets.SIGNING_KEY_ID }}
+          SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
+        run: |
+          for name in MAVEN_CENTRAL_USERNAME MAVEN_CENTRAL_PASSWORD SIGNING_KEY SIGNING_KEY_ID SIGNING_KEY_PASSWORD; do
+            if [ -z "${!name}" ]; then
+              echo "::error::Secret $name is empty. Publishing would produce unsigned or unauthenticated artifacts that Maven Central rejects."
+              exit 1
+            fi
+          done
+
+      # The Central Portal keeps the deployment for review (automaticRelease = false): publish it
+      # from https://central.sonatype.com/publishing/deployments once it has been checked
+      - name: Publish
+        if: github.event_name == 'release'
+        run: ./gradlew publishToMavenCentral --no-configuration-cache --stacktrace
+        env:
+          ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+          ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.SIGNING_KEY }}
+          ORG_GRADLE_PROJECT_signingInMemoryKeyId: ${{ secrets.SIGNING_KEY_ID }}
+          ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.SIGNING_KEY_PASSWORD }}
+
+      - name: Publish to Maven Local (dry run)
+        if: github.event_name == 'workflow_dispatch'
+        run: ./gradlew publishToMavenLocal --no-configuration-cache --stacktrace
+
+  ide-plugin:
+    name: Attach the IDE plugin
+    needs: [checks]
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - uses: gradle/actions/setup-gradle@v6
+        with:
+          cache-read-only: true
+
+      - name: Build the plugin
+        run: ./gradlew -p store-studio-idea buildPlugin --stacktrace
+
+      - name: Attach it to the release
+        if: github.event_name == 'release'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.release.tag_name }}
+        run: gh release upload "$TAG" store-studio-idea/build/distributions/*.zip --clobber
+
+      - name: Upload it as an artifact (dry run)
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v6
+        with:
+          name: store-studio-idea
+          path: store-studio-idea/build/distributions/*.zip

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="promo_showcase">MUESTRA OFICIAL</string>
+    <string name="promo_title">Now in Android</string>
+    <string name="promo_description">Perspectivas de ingeniería, patrones de arquitectura y novedades del desarrollo Android moderno.</string>
+    <string name="promo_edition">EDICIÓN 2026</string>
+</resources>

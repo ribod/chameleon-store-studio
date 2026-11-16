@@ -1,0 +1,742 @@
+public final class dev/ribod/storestudio/gradle/StoreStudioPlugin : org/gradle/api/Plugin {
+	public fun <init> ()V
+	public synthetic fun apply (Ljava/lang/Object;)V
+	public fun apply (Lorg/gradle/api/Project;)V
+}
+
+public abstract class dev/ribod/storestudio/gradle/dsl/AppStoreBuildOptions {
+	public fun <init> (Lorg/gradle/api/model/ObjectFactory;)V
+	public final fun getBetaGroups ()Lorg/gradle/api/provider/ListProperty;
+	public final fun getBundleShortVersion ()Lorg/gradle/api/provider/Property;
+	public final fun getBundleVersion ()Lorg/gradle/api/provider/Property;
+	public final fun getIpaFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public final fun getPlatform ()Lorg/gradle/api/provider/Property;
+	public final fun getPollInterval ()Lorg/gradle/api/provider/Property;
+	public final fun getProcessingTimeout ()Lorg/gradle/api/provider/Property;
+	public final fun getSubmitBetaReview ()Lorg/gradle/api/provider/Property;
+	public final fun getSubmitForReview ()Lorg/gradle/api/provider/Property;
+	public final fun getUseReleaseNotesAsWhatToTest ()Lorg/gradle/api/provider/Property;
+}
+
+public abstract class dev/ribod/storestudio/gradle/dsl/AppStoreOptions {
+	public fun <init> (Lorg/gradle/api/model/ObjectFactory;)V
+	public final fun getExtraIphoneSizes ()Lorg/gradle/api/provider/SetProperty;
+	public final fun getSupportsIpad ()Lorg/gradle/api/provider/Property;
+}
+
+public abstract class dev/ribod/storestudio/gradle/dsl/AppStorePublishingOptions {
+	public fun <init> (Lorg/gradle/api/model/ObjectFactory;)V
+	public final fun build (Lorg/gradle/api/Action;)V
+	public final fun getBuild ()Ldev/ribod/storestudio/gradle/dsl/AppStoreBuildOptions;
+	public final fun getBundleId ()Lorg/gradle/api/provider/Property;
+	public final fun getIssuerId ()Lorg/gradle/api/provider/Property;
+	public final fun getKeyId ()Lorg/gradle/api/provider/Property;
+	public final fun getPrivateKey ()Lorg/gradle/api/provider/Property;
+}
+
+public abstract class dev/ribod/storestudio/gradle/dsl/BaselineOptions {
+	public fun <init> (Lorg/gradle/api/model/ObjectFactory;Lorg/gradle/api/file/ProjectLayout;)V
+	public final fun getBaseExportDir ()Lorg/gradle/api/file/DirectoryProperty;
+	public final fun getComparison ()Lorg/gradle/api/provider/Property;
+	public final fun getFailOnDrift ()Lorg/gradle/api/provider/Property;
+	public final fun getFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public final fun getPerceptualThreshold ()Lorg/gradle/api/provider/Property;
+	public final fun getRequired ()Lorg/gradle/api/provider/Property;
+}
+
+public abstract class dev/ribod/storestudio/gradle/dsl/CiOptions {
+	public fun <init> (Lorg/gradle/api/model/ObjectFactory;)V
+	public final fun getCommentMarker ()Lorg/gradle/api/provider/Property;
+	public final fun getFailOnDrift ()Lorg/gradle/api/provider/Property;
+	public final fun getFailOnValidationErrors ()Lorg/gradle/api/provider/Property;
+	public final fun getGithubToken ()Lorg/gradle/api/provider/Property;
+	public final fun getGitlabToken ()Lorg/gradle/api/provider/Property;
+	public final fun getPostPrComment ()Lorg/gradle/api/provider/Property;
+	public final fun getPrNumber ()Lorg/gradle/api/provider/Property;
+}
+
+public abstract class dev/ribod/storestudio/gradle/dsl/ExportOptions {
+	public fun <init> (Lorg/gradle/api/model/ObjectFactory;)V
+	public final fun getBackground ()Lorg/gradle/api/provider/Property;
+	public final fun getJpegFallback ()Lorg/gradle/api/provider/Property;
+	public final fun getJpegQuality ()Lorg/gradle/api/provider/Property;
+	public final fun getLayout ()Lorg/gradle/api/provider/Property;
+	public final fun getLowercaseFolders ()Lorg/gradle/api/provider/Property;
+	public final fun getSizeMismatchPolicy ()Lorg/gradle/api/provider/Property;
+	public final fun getSizeTolerancePx ()Lorg/gradle/api/provider/Property;
+}
+
+public abstract class dev/ribod/storestudio/gradle/dsl/GooglePlayPublishingOptions {
+	public fun <init> (Lorg/gradle/api/model/ObjectFactory;)V
+	public final fun getChangesNotSentForReview ()Lorg/gradle/api/provider/Property;
+	public final fun getPackageName ()Lorg/gradle/api/provider/Property;
+	public final fun getRelease ()Ldev/ribod/storestudio/gradle/dsl/GooglePlayReleaseOptions;
+	public final fun getServiceAccountJson ()Lorg/gradle/api/provider/Property;
+	public final fun getTrack ()Lorg/gradle/api/provider/Property;
+	public final fun release (Lorg/gradle/api/Action;)V
+}
+
+public abstract class dev/ribod/storestudio/gradle/dsl/GooglePlayReleaseOptions {
+	public fun <init> (Lorg/gradle/api/model/ObjectFactory;)V
+	public final fun getDebugSymbols ()Lorg/gradle/api/file/RegularFileProperty;
+	public final fun getExistingEditId ()Lorg/gradle/api/provider/Property;
+	public final fun getInAppUpdatePriority ()Lorg/gradle/api/provider/Property;
+	public final fun getMappingFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public final fun getReleaseFiles ()Lorg/gradle/api/file/ConfigurableFileCollection;
+	public final fun getReleaseName ()Lorg/gradle/api/provider/Property;
+	public final fun getRetainVersionCodes ()Lorg/gradle/api/provider/ListProperty;
+	public final fun getStatus ()Lorg/gradle/api/provider/Property;
+	public final fun getTrack ()Lorg/gradle/api/provider/Property;
+	public final fun getUploadTimeout ()Lorg/gradle/api/provider/Property;
+	public final fun getUseReleaseNotes ()Lorg/gradle/api/provider/Property;
+	public final fun getUserFraction ()Lorg/gradle/api/provider/Property;
+	public final fun getVariant ()Lorg/gradle/api/provider/Property;
+}
+
+public abstract class dev/ribod/storestudio/gradle/dsl/IconOptions {
+	public fun <init> ()V
+	public abstract fun getAppStore ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getGooglePlay ()Lorg/gradle/api/file/RegularFileProperty;
+}
+
+public abstract class dev/ribod/storestudio/gradle/dsl/LocaleSpec : org/gradle/api/Named {
+	public fun <init> (Ljava/lang/String;Lorg/gradle/api/model/ObjectFactory;)V
+	public final fun getAppStore ()Lorg/gradle/api/provider/Property;
+	public fun getName ()Ljava/lang/String;
+	public final fun getPlayStore ()Lorg/gradle/api/provider/Property;
+}
+
+public abstract class dev/ribod/storestudio/gradle/dsl/MetadataOptions {
+	public fun <init> (Lorg/gradle/api/model/ObjectFactory;Lorg/gradle/api/file/ProjectLayout;)V
+	public final fun getDefaultLocale ()Lorg/gradle/api/provider/Property;
+	public final fun getDirectory ()Lorg/gradle/api/file/DirectoryProperty;
+}
+
+public abstract class dev/ribod/storestudio/gradle/dsl/PublishingOptions {
+	public fun <init> (Lorg/gradle/api/model/ObjectFactory;)V
+	public final fun appStore (Lorg/gradle/api/Action;)V
+	public final fun getAppStore ()Ldev/ribod/storestudio/gradle/dsl/AppStorePublishingOptions;
+	public final fun getGooglePlay ()Ldev/ribod/storestudio/gradle/dsl/GooglePlayPublishingOptions;
+	public final fun googlePlay (Lorg/gradle/api/Action;)V
+}
+
+public final class dev/ribod/storestudio/gradle/dsl/RenderingEngine : java/lang/Enum {
+	public static final field LAYOUTLIB Ldev/ribod/storestudio/gradle/dsl/RenderingEngine;
+	public static final field NONE Ldev/ribod/storestudio/gradle/dsl/RenderingEngine;
+	public static final field ROBOLECTRIC Ldev/ribod/storestudio/gradle/dsl/RenderingEngine;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Ldev/ribod/storestudio/gradle/dsl/RenderingEngine;
+	public static fun values ()[Ldev/ribod/storestudio/gradle/dsl/RenderingEngine;
+}
+
+public abstract class dev/ribod/storestudio/gradle/dsl/RenderingOptions {
+	public fun <init> (Lorg/gradle/api/model/ObjectFactory;)V
+	public final fun getBatchSize ()Lorg/gradle/api/provider/Property;
+	public final fun getConfigureLibraryResources ()Lorg/gradle/api/provider/Property;
+	public final fun getEngine ()Lorg/gradle/api/provider/Property;
+	public final fun getFallbackEngine ()Lorg/gradle/api/provider/Property;
+	public final fun getFallbackJvmArgs ()Lorg/gradle/api/provider/ListProperty;
+	public final fun getFallbackTimeout ()Lorg/gradle/api/provider/Property;
+	public final fun getLayoutlibVersion ()Lorg/gradle/api/provider/Property;
+	public final fun getMaxParallelProcesses ()Lorg/gradle/api/provider/Property;
+	public final fun getRendererJvmArgs ()Lorg/gradle/api/provider/ListProperty;
+	public final fun getRendererVersion ()Lorg/gradle/api/provider/Property;
+	public final fun getRobolectricVersion ()Lorg/gradle/api/provider/Property;
+	public final fun getStallTimeout ()Lorg/gradle/api/provider/Property;
+	public final fun getTimeout ()Lorg/gradle/api/provider/Property;
+}
+
+public abstract class dev/ribod/storestudio/gradle/dsl/ReportsOptions {
+	public fun <init> (Lorg/gradle/api/model/ObjectFactory;)V
+	public final fun getAppName ()Lorg/gradle/api/provider/Property;
+	public final fun getCategory ()Lorg/gradle/api/provider/Property;
+	public final fun getDeveloperName ()Lorg/gradle/api/provider/Property;
+	public final fun getHtmlGallery ()Lorg/gradle/api/provider/Property;
+	public final fun getImageMode ()Lorg/gradle/api/provider/Property;
+	public final fun getIncludeUnchangedInDiff ()Lorg/gradle/api/provider/Property;
+	public final fun getMaxThumbnailDimension ()Lorg/gradle/api/provider/Property;
+	public abstract fun getOutputDirectory ()Lorg/gradle/api/file/DirectoryProperty;
+	public final fun getStoreListingPreview ()Lorg/gradle/api/provider/Property;
+	public final fun getThumbnailQuality ()Lorg/gradle/api/provider/Property;
+}
+
+public abstract class dev/ribod/storestudio/gradle/dsl/StatusBarOptions {
+	public fun <init> (Lorg/gradle/api/model/ObjectFactory;)V
+	public final fun getBattery ()Lorg/gradle/api/provider/Property;
+	public final fun getCellular ()Lorg/gradle/api/provider/Property;
+	public final fun getCharging ()Lorg/gradle/api/provider/Property;
+	public final fun getDarkIcons ()Lorg/gradle/api/provider/Property;
+	public final fun getEnabled ()Lorg/gradle/api/provider/Property;
+	public final fun getShowBattery ()Lorg/gradle/api/provider/Property;
+	public final fun getShowCellular ()Lorg/gradle/api/provider/Property;
+	public final fun getShowTime ()Lorg/gradle/api/provider/Property;
+	public final fun getShowWifi ()Lorg/gradle/api/provider/Property;
+	public final fun getStyle ()Lorg/gradle/api/provider/Property;
+	public final fun getTime ()Lorg/gradle/api/provider/Property;
+	public final fun getWifi ()Lorg/gradle/api/provider/Property;
+}
+
+public final class dev/ribod/storestudio/gradle/dsl/StatusBarStyleKind : java/lang/Enum {
+	public static final field ANDROID Ldev/ribod/storestudio/gradle/dsl/StatusBarStyleKind;
+	public static final field AUTO Ldev/ribod/storestudio/gradle/dsl/StatusBarStyleKind;
+	public static final field IOS Ldev/ribod/storestudio/gradle/dsl/StatusBarStyleKind;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Ldev/ribod/storestudio/gradle/dsl/StatusBarStyleKind;
+	public static fun values ()[Ldev/ribod/storestudio/gradle/dsl/StatusBarStyleKind;
+}
+
+public abstract class dev/ribod/storestudio/gradle/dsl/StoreStudioExtension {
+	public fun <init> (Lorg/gradle/api/model/ObjectFactory;)V
+	public final fun appStore (Lorg/gradle/api/Action;)V
+	public final fun baseline (Lorg/gradle/api/Action;)V
+	public final fun ci (Lorg/gradle/api/Action;)V
+	public final fun export (Lorg/gradle/api/Action;)V
+	public final fun getAppStore ()Ldev/ribod/storestudio/gradle/dsl/AppStoreOptions;
+	public final fun getAutoDependencies ()Lorg/gradle/api/provider/Property;
+	public final fun getBaseline ()Ldev/ribod/storestudio/gradle/dsl/BaselineOptions;
+	public final fun getCi ()Ldev/ribod/storestudio/gradle/dsl/CiOptions;
+	public final fun getDefaultDevices ()Lorg/gradle/api/provider/SetProperty;
+	public final fun getExport ()Ldev/ribod/storestudio/gradle/dsl/ExportOptions;
+	public final fun getIcons ()Ldev/ribod/storestudio/gradle/dsl/IconOptions;
+	public final fun getLocales ()Lorg/gradle/api/NamedDomainObjectContainer;
+	public final fun getMetadata ()Ldev/ribod/storestudio/gradle/dsl/MetadataOptions;
+	public final fun getPluginVersion ()Lorg/gradle/api/provider/Property;
+	public final fun getPublishing ()Ldev/ribod/storestudio/gradle/dsl/PublishingOptions;
+	public final fun getRendering ()Ldev/ribod/storestudio/gradle/dsl/RenderingOptions;
+	public final fun getReports ()Ldev/ribod/storestudio/gradle/dsl/ReportsOptions;
+	public final fun getStatusBar ()Ldev/ribod/storestudio/gradle/dsl/StatusBarOptions;
+	public final fun getTargets ()Lorg/gradle/api/provider/SetProperty;
+	public final fun getValidation ()Ldev/ribod/storestudio/gradle/dsl/ValidationOptions;
+	public final fun getVariant ()Lorg/gradle/api/provider/Property;
+	public final fun icons (Lorg/gradle/api/Action;)V
+	public final fun locale (Ljava/lang/String;Lorg/gradle/api/Action;)V
+	public static synthetic fun locale$default (Ldev/ribod/storestudio/gradle/dsl/StoreStudioExtension;Ljava/lang/String;Lorg/gradle/api/Action;ILjava/lang/Object;)V
+	public final fun locales (Lorg/gradle/api/Action;)V
+	public final fun metadata (Lorg/gradle/api/Action;)V
+	public final fun publishing (Lorg/gradle/api/Action;)V
+	public final fun rendering (Lorg/gradle/api/Action;)V
+	public final fun reports (Lorg/gradle/api/Action;)V
+	public final fun statusBar (Lorg/gradle/api/Action;)V
+	public final fun validation (Lorg/gradle/api/Action;)V
+}
+
+public abstract class dev/ribod/storestudio/gradle/dsl/ValidationOptions {
+	public fun <init> (Lorg/gradle/api/model/ObjectFactory;)V
+	public final fun getAttachToCheck ()Lorg/gradle/api/provider/Property;
+	public final fun getFailOnWarning ()Lorg/gradle/api/provider/Property;
+	public final fun getFeatureGraphicMissing ()Lorg/gradle/api/provider/Property;
+	public final fun getSeverityOverrides ()Lorg/gradle/api/provider/MapProperty;
+}
+
+public abstract class dev/ribod/storestudio/gradle/tasks/ExportStoreDiffHtmlTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public final fun generate ()V
+	public abstract fun getAppIcon ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getAppName ()Lorg/gradle/api/provider/Property;
+	public abstract fun getBeforeImagesDir ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getDeveloperName ()Lorg/gradle/api/provider/Property;
+	public abstract fun getDiffJsonFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getHeadExportDirectory ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getHeadExportIndexFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getImageMode ()Lorg/gradle/api/provider/Property;
+	public abstract fun getIncludeUnchanged ()Lorg/gradle/api/provider/Property;
+	public abstract fun getMaxThumbnailDimension ()Lorg/gradle/api/provider/Property;
+	public abstract fun getOutputHtmlFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getOutputSummaryMarkdownFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getThumbnailQuality ()Lorg/gradle/api/provider/Property;
+	public final fun setIncludeUnchangedOption (Z)V
+}
+
+public abstract class dev/ribod/storestudio/gradle/tasks/ExportStoreGalleryHtmlTask : dev/ribod/storestudio/gradle/tasks/StoreHtmlReportTask {
+	public fun <init> ()V
+	protected fun render (Ldev/ribod/storestudio/core/report/model/GalleryPageModel;)Ljava/lang/String;
+	protected fun reportName ()Ljava/lang/String;
+}
+
+public abstract class dev/ribod/storestudio/gradle/tasks/ExportStoreListingPreviewHtmlTask : dev/ribod/storestudio/gradle/tasks/StoreHtmlReportTask {
+	public fun <init> ()V
+	protected fun render (Ldev/ribod/storestudio/core/report/model/GalleryPageModel;)Ljava/lang/String;
+	protected fun reportName ()Ljava/lang/String;
+}
+
+public abstract class dev/ribod/storestudio/gradle/tasks/ExportStoreMetadataTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public final fun export ()V
+	public abstract fun getFileSystemOperations ()Lorg/gradle/api/file/FileSystemOperations;
+	public abstract fun getLayout ()Lorg/gradle/api/provider/Property;
+	public abstract fun getLowercaseFolders ()Lorg/gradle/api/provider/Property;
+	public abstract fun getMetadataFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getOutputDirectory ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getTargets ()Lorg/gradle/api/provider/SetProperty;
+}
+
+public abstract class dev/ribod/storestudio/gradle/tasks/LayoutlibRenderTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public abstract fun getApiLevel ()Lorg/gradle/api/provider/Property;
+	public abstract fun getAppClasspath ()Lorg/gradle/api/file/ConfigurableFileCollection;
+	public abstract fun getBatchSize ()Lorg/gradle/api/provider/Property;
+	public abstract fun getDefaultDevices ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getEngine ()Lorg/gradle/api/provider/Property;
+	public abstract fun getExecutionTimeout ()Lorg/gradle/api/provider/Property;
+	public abstract fun getExtraIphoneSizes ()Lorg/gradle/api/provider/SetProperty;
+	public abstract fun getFailedJobsFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getFallbackEngine ()Lorg/gradle/api/provider/Property;
+	public abstract fun getKmpModule ()Lorg/gradle/api/provider/Property;
+	public abstract fun getLayoutlibDir ()Lorg/gradle/api/file/ConfigurableFileCollection;
+	public abstract fun getLayoutlibVersion ()Lorg/gradle/api/provider/Property;
+	public abstract fun getLibraryModule ()Lorg/gradle/api/provider/Property;
+	public abstract fun getLocales ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getManifestFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getMaxParallelProcesses ()Lorg/gradle/api/provider/Property;
+	public abstract fun getNamespace ()Lorg/gradle/api/provider/Property;
+	public abstract fun getProjectClasspath ()Lorg/gradle/api/file/ConfigurableFileCollection;
+	public abstract fun getRClassPath ()Lorg/gradle/api/file/ConfigurableFileCollection;
+	public abstract fun getRawImagesDir ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getRenderIndex ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getRendererClasspath ()Lorg/gradle/api/file/ConfigurableFileCollection;
+	public abstract fun getRendererJvmArgs ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getRendererVersion ()Lorg/gradle/api/provider/Property;
+	public abstract fun getResourceApk ()Lorg/gradle/api/file/ConfigurableFileCollection;
+	public abstract fun getSemanticsDir ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getStallTimeout ()Lorg/gradle/api/provider/Property;
+	public abstract fun getStatusBar ()Lorg/gradle/api/provider/Property;
+	public abstract fun getTargets ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getWorkDir ()Lorg/gradle/api/file/DirectoryProperty;
+	public final fun render ()V
+}
+
+public abstract class dev/ribod/storestudio/gradle/tasks/MergeStoreManifestTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public abstract fun getManifestFiles ()Lorg/gradle/api/file/ConfigurableFileCollection;
+	public abstract fun getMergedManifest ()Lorg/gradle/api/file/RegularFileProperty;
+	public final fun merge ()V
+}
+
+public abstract class dev/ribod/storestudio/gradle/tasks/ParseStoreMetadataTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public abstract fun getAppStoreIcon ()Lorg/gradle/api/provider/Property;
+	public abstract fun getConfiguredLocales ()Lorg/gradle/api/provider/SetProperty;
+	public abstract fun getDefaultLocale ()Lorg/gradle/api/provider/Property;
+	public abstract fun getGooglePlayIcon ()Lorg/gradle/api/provider/Property;
+	public abstract fun getMetadataDirectory ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getMetadataFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public final fun parse ()V
+}
+
+public abstract class dev/ribod/storestudio/gradle/tasks/RobolectricFallbackTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public final fun executeFallback ()V
+	public abstract fun getAppClasspath ()Lorg/gradle/api/file/ConfigurableFileCollection;
+	public abstract fun getBootClasspath ()Lorg/gradle/api/file/ConfigurableFileCollection;
+	public abstract fun getFailedJobsFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getFallbackEngine ()Lorg/gradle/api/provider/Property;
+	public abstract fun getFallbackImagesDir ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getFallbackIndexFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getFallbackSemanticsDir ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getJvmArgs ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getMergedManifestFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getNamespace ()Lorg/gradle/api/provider/Property;
+	public abstract fun getProcessTimeout ()Lorg/gradle/api/provider/Property;
+	public abstract fun getProjectClasspath ()Lorg/gradle/api/file/ConfigurableFileCollection;
+	public abstract fun getRClassPath ()Lorg/gradle/api/file/ConfigurableFileCollection;
+	public abstract fun getRenderIndexFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getResourceApk ()Lorg/gradle/api/file/ConfigurableFileCollection;
+	public abstract fun getRobolectricClasspath ()Lorg/gradle/api/file/ConfigurableFileCollection;
+	public abstract fun getStatusBar ()Lorg/gradle/api/provider/Property;
+	public abstract fun getWorkDir ()Lorg/gradle/api/file/DirectoryProperty;
+}
+
+public abstract class dev/ribod/storestudio/gradle/tasks/StoreCiTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public final fun executeQualityGate ()V
+	public abstract fun getCommentMarker ()Lorg/gradle/api/provider/Property;
+	public abstract fun getDiffHtmlFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getDiffJsonFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getDiffSummaryMarkdownFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getFailOnDrift ()Lorg/gradle/api/provider/Property;
+	public abstract fun getFailOnValidationErrors ()Lorg/gradle/api/provider/Property;
+	public abstract fun getGithubToken ()Lorg/gradle/api/provider/Property;
+	public abstract fun getGitlabToken ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPostPrComment ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPrNumber ()Lorg/gradle/api/provider/Property;
+	public abstract fun getValidationReportFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public final fun setFailOnDriftOption (Z)V
+	public final fun setFailOnValidationOption (Z)V
+	public final fun setPostPrCommentOption (Z)V
+	public final fun setPrNumberOption (Ljava/lang/String;)V
+}
+
+public abstract class dev/ribod/storestudio/gradle/tasks/StoreDiffTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public final fun diff ()V
+	public abstract fun getAgainstRef ()Lorg/gradle/api/provider/Property;
+	public abstract fun getBaseExportDir ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getBaselineFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getBaselineFiles ()Lorg/gradle/api/file/ConfigurableFileCollection;
+	public abstract fun getBeforeImagesDir ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getCacheDirectory ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getComparison ()Lorg/gradle/api/provider/Property;
+	public abstract fun getDiffJsonFile ()Lorg/gradle/api/file/RegularFileProperty;
+	protected abstract fun getExecOperations ()Lorg/gradle/process/ExecOperations;
+	public abstract fun getHeadExportDirectory ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getHeadExportIndexFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getPerceptualThreshold ()Lorg/gradle/api/provider/Property;
+	public abstract fun getProjectDir ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getProjectPath ()Lorg/gradle/api/provider/Property;
+	public abstract fun getRenderBase ()Lorg/gradle/api/provider/Property;
+	public abstract fun getRootProjectDir ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getWorkDirectory ()Lorg/gradle/api/file/DirectoryProperty;
+	public final fun setAgainstOption (Ljava/lang/String;)V
+	public final fun setBaseExportOption (Ljava/lang/String;)V
+	public final fun setRenderBaseOption (Z)V
+}
+
+public abstract class dev/ribod/storestudio/gradle/tasks/StoreDoctorTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public final fun checkEnvironment ()V
+	public abstract fun getAndroidPluginApplied ()Lorg/gradle/api/provider/Property;
+	public abstract fun getConfiguredVariant ()Lorg/gradle/api/provider/Property;
+	public abstract fun getHasAppStoreConfigured ()Lorg/gradle/api/provider/Property;
+	public abstract fun getHasGooglePlayConfigured ()Lorg/gradle/api/provider/Property;
+	public abstract fun getKspPluginApplied ()Lorg/gradle/api/provider/Property;
+	public abstract fun getTargets ()Lorg/gradle/api/provider/SetProperty;
+}
+
+public abstract class dev/ribod/storestudio/gradle/tasks/StoreDumpTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public final fun dumpMatrix ()V
+	public abstract fun getBaselineComparison ()Lorg/gradle/api/provider/Property;
+	public abstract fun getDefaultDevices ()Lorg/gradle/api/provider/SetProperty;
+	public abstract fun getLocales ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getRenderingEngine ()Lorg/gradle/api/provider/Property;
+	public abstract fun getTargets ()Lorg/gradle/api/provider/SetProperty;
+	public abstract fun getVariant ()Lorg/gradle/api/provider/Property;
+}
+
+public abstract class dev/ribod/storestudio/gradle/tasks/StoreExportTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public final fun export ()V
+	public abstract fun getBackgroundColor ()Lorg/gradle/api/provider/Property;
+	public abstract fun getExportDirectory ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getExportIndexFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getFallbackImagesDir ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getFallbackIndexFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getFallbackSemanticsDir ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getFileSystemOperations ()Lorg/gradle/api/file/FileSystemOperations;
+	public abstract fun getJpegFallback ()Lorg/gradle/api/provider/Property;
+	public abstract fun getJpegQuality ()Lorg/gradle/api/provider/Property;
+	public abstract fun getLayout ()Lorg/gradle/api/provider/Property;
+	public abstract fun getLowercaseFolders ()Lorg/gradle/api/provider/Property;
+	public abstract fun getMergedManifest ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getRawImagesDir ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getRenderIndex ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getSemanticsDir ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getSizeMismatchPolicy ()Lorg/gradle/api/provider/Property;
+	public abstract fun getSizeTolerancePx ()Lorg/gradle/api/provider/Property;
+}
+
+public abstract class dev/ribod/storestudio/gradle/tasks/StoreHtmlReportTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public final fun generate ()V
+	public abstract fun getAppIcon ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getAppName ()Lorg/gradle/api/provider/Property;
+	public abstract fun getAppStoreIcon ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getCategory ()Lorg/gradle/api/provider/Property;
+	public abstract fun getDeveloperName ()Lorg/gradle/api/provider/Property;
+	public abstract fun getExportDirectory ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getExportIndexFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getImageMode ()Lorg/gradle/api/provider/Property;
+	public abstract fun getMaxThumbnailDimension ()Lorg/gradle/api/provider/Property;
+	public abstract fun getMetadataDirectory ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getMetadataFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getOutputFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getValidationReportFile ()Lorg/gradle/api/file/RegularFileProperty;
+	protected abstract fun render (Ldev/ribod/storestudio/core/report/model/GalleryPageModel;)Ljava/lang/String;
+	protected abstract fun reportName ()Ljava/lang/String;
+}
+
+public abstract class dev/ribod/storestudio/gradle/tasks/StorePublishAppStoreBinaryTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public abstract fun getBetaGroups ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getBundleId ()Lorg/gradle/api/provider/Property;
+	public abstract fun getBundleShortVersion ()Lorg/gradle/api/provider/Property;
+	public abstract fun getBundleVersion ()Lorg/gradle/api/provider/Property;
+	public abstract fun getDryRun ()Lorg/gradle/api/provider/Property;
+	public abstract fun getDryRunFromProperties ()Lorg/gradle/api/provider/Property;
+	public abstract fun getIpaFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getIssuerId ()Lorg/gradle/api/provider/Property;
+	public abstract fun getKeyId ()Lorg/gradle/api/provider/Property;
+	public abstract fun getMetadataDirectory ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getMetadataFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getPlatform ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPollInterval ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPrivateKey ()Lorg/gradle/api/provider/Property;
+	public abstract fun getProcessingTimeout ()Lorg/gradle/api/provider/Property;
+	public abstract fun getStoreLocales ()Lorg/gradle/api/provider/MapProperty;
+	public abstract fun getSubmitBetaReview ()Lorg/gradle/api/provider/Property;
+	public abstract fun getSubmitForReview ()Lorg/gradle/api/provider/Property;
+	public abstract fun getUseReleaseNotesAsWhatToTest ()Lorg/gradle/api/provider/Property;
+	public final fun publish ()V
+	public final fun setBetaGroupOption (Ljava/util/List;)V
+	public final fun setBundleShortVersionOption (Ljava/lang/String;)V
+	public final fun setBundleVersionOption (Ljava/lang/String;)V
+	public final fun setIpaOption (Ljava/lang/String;)V
+	public final fun setPublishDryRunOption (Z)V
+	public final fun setSubmitBetaReviewOption (Z)V
+	public final fun setSubmitForReviewOption (Z)V
+}
+
+public abstract class dev/ribod/storestudio/gradle/tasks/StorePublishAppStoreTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public abstract fun getBetaGroups ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getBundleId ()Lorg/gradle/api/provider/Property;
+	public abstract fun getBundleShortVersion ()Lorg/gradle/api/provider/Property;
+	public abstract fun getBundleVersion ()Lorg/gradle/api/provider/Property;
+	public abstract fun getCliParts ()Lorg/gradle/api/provider/Property;
+	public abstract fun getDryRun ()Lorg/gradle/api/provider/Property;
+	public abstract fun getDryRunFromProperties ()Lorg/gradle/api/provider/Property;
+	public abstract fun getExportDirectory ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getExportIndexFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getFailOnWarning ()Lorg/gradle/api/provider/Property;
+	public abstract fun getIncludeBinary ()Lorg/gradle/api/provider/Property;
+	public abstract fun getInputsHashFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getIpaFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getIssuerId ()Lorg/gradle/api/provider/Property;
+	public abstract fun getKeyId ()Lorg/gradle/api/provider/Property;
+	public abstract fun getMetadataDirectory ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getMetadataFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getParts ()Lorg/gradle/api/provider/SetProperty;
+	public abstract fun getPartsFromProperties ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPlatform ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPollInterval ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPrivateKey ()Lorg/gradle/api/provider/Property;
+	public abstract fun getProcessingTimeout ()Lorg/gradle/api/provider/Property;
+	public abstract fun getReportFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getSeverityOverrides ()Lorg/gradle/api/provider/MapProperty;
+	public abstract fun getStoreLocales ()Lorg/gradle/api/provider/MapProperty;
+	public abstract fun getSubmitBetaReview ()Lorg/gradle/api/provider/Property;
+	public abstract fun getSubmitForReview ()Lorg/gradle/api/provider/Property;
+	public abstract fun getUseReleaseNotesAsWhatToTest ()Lorg/gradle/api/provider/Property;
+	public final fun publish ()V
+	public final fun setBetaGroupOption (Ljava/util/List;)V
+	public final fun setBundleIdOption (Ljava/lang/String;)V
+	public final fun setBundleShortVersionOption (Ljava/lang/String;)V
+	public final fun setBundleVersionOption (Ljava/lang/String;)V
+	public final fun setIpaOption (Ljava/lang/String;)V
+	public final fun setPartsOption (Ljava/lang/String;)V
+	public final fun setPublishDryRunOption (Z)V
+	public final fun setSubmitBetaReviewOption (Z)V
+	public final fun setSubmitForReviewOption (Z)V
+}
+
+public abstract class dev/ribod/storestudio/gradle/tasks/StorePublishPlayBinaryTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public abstract fun getAgpBundle ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getAgpMapping ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getChangesNotSentForReview ()Lorg/gradle/api/provider/Property;
+	public abstract fun getCliReleaseFiles ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getDebugSymbols ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getDryRun ()Lorg/gradle/api/provider/Property;
+	public abstract fun getDryRunFromProperties ()Lorg/gradle/api/provider/Property;
+	public abstract fun getExistingEditId ()Lorg/gradle/api/provider/Property;
+	public abstract fun getInAppUpdatePriority ()Lorg/gradle/api/provider/Property;
+	public abstract fun getMappingFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getMetadataDirectory ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getMetadataFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getPackageName ()Lorg/gradle/api/provider/Property;
+	public abstract fun getReleaseFiles ()Lorg/gradle/api/file/ConfigurableFileCollection;
+	public abstract fun getReleaseName ()Lorg/gradle/api/provider/Property;
+	public abstract fun getRetainVersionCodes ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getServiceAccountJson ()Lorg/gradle/api/provider/Property;
+	public abstract fun getStatus ()Lorg/gradle/api/provider/Property;
+	public abstract fun getStoreLocales ()Lorg/gradle/api/provider/MapProperty;
+	public abstract fun getTrack ()Lorg/gradle/api/provider/Property;
+	public abstract fun getUploadTimeout ()Lorg/gradle/api/provider/Property;
+	public abstract fun getUseReleaseNotes ()Lorg/gradle/api/provider/Property;
+	public abstract fun getUserFraction ()Lorg/gradle/api/provider/Property;
+	public final fun publish ()V
+	public final fun setChangesNotSentOption (Z)V
+	public final fun setExistingEditIdOption (Ljava/lang/String;)V
+	public final fun setInAppUpdatePriorityOption (Ljava/lang/String;)V
+	public final fun setMappingFileOption (Ljava/lang/String;)V
+	public final fun setPublishDryRunOption (Z)V
+	public final fun setReleaseFileOption (Ljava/util/List;)V
+	public final fun setReleaseNameOption (Ljava/lang/String;)V
+	public final fun setReleaseStatusOption (Ljava/lang/String;)V
+	public final fun setTrackOption (Ljava/lang/String;)V
+	public final fun setUploadTimeoutOption (Ljava/lang/String;)V
+	public final fun setUserFractionOption (Ljava/lang/String;)V
+}
+
+public abstract class dev/ribod/storestudio/gradle/tasks/StorePublishPlayTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public abstract fun getAgpBundle ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getAgpMapping ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getAppIcon ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getChangesNotSentForReview ()Lorg/gradle/api/provider/Property;
+	public abstract fun getCliParts ()Lorg/gradle/api/provider/Property;
+	public abstract fun getCliReleaseFiles ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getDebugSymbols ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getDryRun ()Lorg/gradle/api/provider/Property;
+	public abstract fun getDryRunFromProperties ()Lorg/gradle/api/provider/Property;
+	public abstract fun getExistingEditId ()Lorg/gradle/api/provider/Property;
+	public abstract fun getExportDirectory ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getExportIndexFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getFailOnWarning ()Lorg/gradle/api/provider/Property;
+	public abstract fun getInAppUpdatePriority ()Lorg/gradle/api/provider/Property;
+	public abstract fun getIncludeBinary ()Lorg/gradle/api/provider/Property;
+	public abstract fun getInputsHashFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getMappingFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getMetadataDirectory ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getMetadataFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getPackageName ()Lorg/gradle/api/provider/Property;
+	public abstract fun getParts ()Lorg/gradle/api/provider/SetProperty;
+	public abstract fun getPartsFromProperties ()Lorg/gradle/api/provider/Property;
+	public abstract fun getReleaseFiles ()Lorg/gradle/api/file/ConfigurableFileCollection;
+	public abstract fun getReleaseName ()Lorg/gradle/api/provider/Property;
+	public abstract fun getReportFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getRetainVersionCodes ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getServiceAccountJson ()Lorg/gradle/api/provider/Property;
+	public abstract fun getSeverityOverrides ()Lorg/gradle/api/provider/MapProperty;
+	public abstract fun getStatus ()Lorg/gradle/api/provider/Property;
+	public abstract fun getStoreLocales ()Lorg/gradle/api/provider/MapProperty;
+	public abstract fun getTrack ()Lorg/gradle/api/provider/Property;
+	public abstract fun getUploadTimeout ()Lorg/gradle/api/provider/Property;
+	public abstract fun getUseReleaseNotes ()Lorg/gradle/api/provider/Property;
+	public abstract fun getUserFraction ()Lorg/gradle/api/provider/Property;
+	public final fun publish ()V
+	public final fun setChangesNotSentForReviewOption (Z)V
+	public final fun setExistingEditIdOption (Ljava/lang/String;)V
+	public final fun setInAppUpdatePriorityOption (Ljava/lang/String;)V
+	public final fun setMappingFileOption (Ljava/lang/String;)V
+	public final fun setPackageNameOption (Ljava/lang/String;)V
+	public final fun setPartsOption (Ljava/lang/String;)V
+	public final fun setPublishDryRunOption (Z)V
+	public final fun setReleaseFileOption (Ljava/util/List;)V
+	public final fun setReleaseNameOption (Ljava/lang/String;)V
+	public final fun setReleaseStatusOption (Ljava/lang/String;)V
+	public final fun setTrackOption (Ljava/lang/String;)V
+	public final fun setUploadTimeoutOption (Ljava/lang/String;)V
+	public final fun setUserFractionOption (Ljava/lang/String;)V
+}
+
+public abstract class dev/ribod/storestudio/gradle/tasks/StorePublishTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public abstract fun getAgpBundle ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getAgpMapping ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getAppIcon ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getAppStoreBundleId ()Lorg/gradle/api/provider/Property;
+	public abstract fun getAppStoreIssuerId ()Lorg/gradle/api/provider/Property;
+	public abstract fun getAppStoreKeyId ()Lorg/gradle/api/provider/Property;
+	public abstract fun getAppStoreLocales ()Lorg/gradle/api/provider/MapProperty;
+	public abstract fun getAppStorePrivateKey ()Lorg/gradle/api/provider/Property;
+	public abstract fun getAscBetaGroups ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getAscBundleShortVersion ()Lorg/gradle/api/provider/Property;
+	public abstract fun getAscBundleVersion ()Lorg/gradle/api/provider/Property;
+	public abstract fun getAscIpaFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getAscPlatform ()Lorg/gradle/api/provider/Property;
+	public abstract fun getAscPollInterval ()Lorg/gradle/api/provider/Property;
+	public abstract fun getAscProcessingTimeout ()Lorg/gradle/api/provider/Property;
+	public abstract fun getAscSubmitBetaReview ()Lorg/gradle/api/provider/Property;
+	public abstract fun getAscSubmitForReview ()Lorg/gradle/api/provider/Property;
+	public abstract fun getAscUseReleaseNotesAsWhatToTest ()Lorg/gradle/api/provider/Property;
+	public abstract fun getCliParts ()Lorg/gradle/api/provider/Property;
+	public abstract fun getDryRun ()Lorg/gradle/api/provider/Property;
+	public abstract fun getDryRunFromProperties ()Lorg/gradle/api/provider/Property;
+	public abstract fun getExportDirectory ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getExportIndexFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getFailOnWarning ()Lorg/gradle/api/provider/Property;
+	public abstract fun getIncludeBinary ()Lorg/gradle/api/provider/Property;
+	public abstract fun getInputsHashFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getMetadataDirectory ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getMetadataFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getParts ()Lorg/gradle/api/provider/SetProperty;
+	public abstract fun getPartsFromProperties ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPlayChangesNotSentForReview ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPlayCliReleaseFiles ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getPlayDebugSymbols ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getPlayExistingEditId ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPlayInAppUpdatePriority ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPlayLocales ()Lorg/gradle/api/provider/MapProperty;
+	public abstract fun getPlayMappingFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getPlayPackageName ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPlayReleaseFiles ()Lorg/gradle/api/file/ConfigurableFileCollection;
+	public abstract fun getPlayReleaseName ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPlayReleaseStatus ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPlayRetainVersionCodes ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getPlayServiceAccountJson ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPlayTrack ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPlayUploadTimeout ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPlayUseReleaseNotes ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPlayUserFraction ()Lorg/gradle/api/provider/Property;
+	public abstract fun getReportFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getSeverityOverrides ()Lorg/gradle/api/provider/MapProperty;
+	public abstract fun getTargetMarketplace ()Lorg/gradle/api/provider/Property;
+	public abstract fun getTargets ()Lorg/gradle/api/provider/SetProperty;
+	public final fun publish ()V
+	public final fun setBetaGroupOption (Ljava/util/List;)V
+	public final fun setBundleIdOption (Ljava/lang/String;)V
+	public final fun setBundleShortVersionOption (Ljava/lang/String;)V
+	public final fun setBundleVersionOption (Ljava/lang/String;)V
+	public final fun setChangesNotSentForReviewOption (Z)V
+	public final fun setExistingEditIdOption (Ljava/lang/String;)V
+	public final fun setInAppUpdatePriorityOption (Ljava/lang/String;)V
+	public final fun setIpaOption (Ljava/lang/String;)V
+	public final fun setMappingFileOption (Ljava/lang/String;)V
+	public final fun setPackageNameOption (Ljava/lang/String;)V
+	public final fun setPartsOption (Ljava/lang/String;)V
+	public final fun setPublishDryRunOption (Z)V
+	public final fun setReleaseFileOption (Ljava/util/List;)V
+	public final fun setReleaseNameOption (Ljava/lang/String;)V
+	public final fun setReleaseStatusOption (Ljava/lang/String;)V
+	public final fun setSubmitBetaReviewOption (Z)V
+	public final fun setSubmitForReviewOption (Z)V
+	public final fun setTargetOption (Ljava/lang/String;)V
+	public final fun setTrackOption (Ljava/lang/String;)V
+	public final fun setUploadTimeoutOption (Ljava/lang/String;)V
+	public final fun setUserFractionOption (Ljava/lang/String;)V
+}
+
+public abstract class dev/ribod/storestudio/gradle/tasks/StoreRecordBaselineTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public abstract fun getBaselineFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getExportIndexFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getLayoutlibVersion ()Lorg/gradle/api/provider/Property;
+	public final fun record ()V
+}
+
+public abstract class dev/ribod/storestudio/gradle/tasks/StoreValidateTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public abstract fun getConfiguredLocales ()Lorg/gradle/api/provider/SetProperty;
+	public abstract fun getConfiguredTargets ()Lorg/gradle/api/provider/SetProperty;
+	public abstract fun getExportDirectory ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getExportIndexFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getFailOnWarning ()Lorg/gradle/api/provider/Property;
+	public abstract fun getFallbackIndexFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getFallbackSemanticsDir ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getFeatureGraphicMissing ()Lorg/gradle/api/provider/Property;
+	public abstract fun getInputsHashFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getListingModule ()Lorg/gradle/api/provider/Property;
+	public abstract fun getMergedManifestFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getMetadataFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getRenderIndexFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getReportFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getSemanticsDir ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getSeverityOverrides ()Lorg/gradle/api/provider/MapProperty;
+	public abstract fun getSupportsIpad ()Lorg/gradle/api/provider/Property;
+	public final fun validate ()V
+}
+
+public abstract class dev/ribod/storestudio/gradle/tasks/StoreVerifyBaselineTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public abstract fun getBaselineFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getBaselineFiles ()Lorg/gradle/api/file/ConfigurableFileCollection;
+	public abstract fun getComparison ()Lorg/gradle/api/provider/Property;
+	public abstract fun getExportIndexFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getFailOnDrift ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPerceptualThreshold ()Lorg/gradle/api/provider/Property;
+	public abstract fun getReportFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getRequired ()Lorg/gradle/api/provider/Property;
+	public final fun verify ()V
+}
+

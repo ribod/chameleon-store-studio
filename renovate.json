@@ -1,0 +1,66 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "minimumReleaseAge": "3 days",
+  "extends": ["config:recommended"],
+  "schedule": ["before 6am on monday"],
+  "timezone": "America/Mexico_City",
+  "labels": ["dependencies"],
+  "ignorePaths": ["samples/**", "compat/**"],
+  "packageRules": [
+    {
+      "description": "Merge minor and patch updates automatically once CI passes",
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true
+    },
+    {
+      "description": "Kotlin, KSP and AGP must move together and are updated by hand",
+      "groupName": "Kotlin, KSP and AGP",
+      "matchPackageNames": [
+        "org.jetbrains.kotlin{/,}**",
+        "com.google.devtools.ksp{/,}**",
+        "com.android.tools.build{/,}**",
+        "com.android.application",
+        "com.android.library",
+        "com.android.kotlin.multiplatform.library"
+      ],
+      "automerge": false
+    },
+    {
+      "description": "Rendering engines change every rendered pixel: review them by hand",
+      "groupName": "Rendering engines",
+      "matchPackageNames": [
+        "org.robolectric{/,}**",
+        "com.android.tools.layoutlib{/,}**",
+        "androidx.compose.ui:ui-tooling{/,}**"
+      ],
+      "automerge": false
+    },
+    {
+      "description": "Compose libraries move together",
+      "groupName": "Compose",
+      "matchPackageNames": [
+        "androidx.compose{/,}**",
+        "org.jetbrains.compose{/,}**"
+      ]
+    },
+    {
+      "description": "The IntelliJ Platform Gradle plugin changes how the IDE plugin is built and verified",
+      "groupName": "IntelliJ Platform",
+      "matchPackageNames": ["org.jetbrains.intellij.platform{/,}**"],
+      "automerge": false
+    },
+    {
+      "description": "GitHub Actions in one pull request, kept on version tags, reviewed by hand",
+      "groupName": "GitHub Actions",
+      "matchManagers": ["github-actions"],
+      "automerge": false
+    },
+    {
+      "description": "Maven publish plugin is released by hand",
+      "matchPackageNames": ["com.vanniktech{/,}**"],
+      "automerge": false
+    }
+  ]
+}

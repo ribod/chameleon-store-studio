@@ -1,0 +1,41 @@
+public final class dev/ribod/storestudio/annotations/DeviceFamily : java/lang/Enum {
+	public static final field AUTO Ldev/ribod/storestudio/annotations/DeviceFamily;
+	public static final field DESKTOP Ldev/ribod/storestudio/annotations/DeviceFamily;
+	public static final field PHONE Ldev/ribod/storestudio/annotations/DeviceFamily;
+	public static final field TABLET Ldev/ribod/storestudio/annotations/DeviceFamily;
+	public static final field TABLET_7 Ldev/ribod/storestudio/annotations/DeviceFamily;
+	public static final field TV Ldev/ribod/storestudio/annotations/DeviceFamily;
+	public static final field WATCH Ldev/ribod/storestudio/annotations/DeviceFamily;
+	public static final field XR Ldev/ribod/storestudio/annotations/DeviceFamily;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Ldev/ribod/storestudio/annotations/DeviceFamily;
+	public static fun values ()[Ldev/ribod/storestudio/annotations/DeviceFamily;
+}
+
+public final class dev/ribod/storestudio/annotations/DeviceFamilyKt {
+	public static final fun getNaturalDisplayOrder (Ldev/ribod/storestudio/annotations/DeviceFamily;)I
+}
+
+public abstract interface annotation class dev/ribod/storestudio/annotations/StoreFeatureGraphic : java/lang/annotation/Annotation {
+	public abstract fun id ()Ljava/lang/String;
+	public abstract fun locales ()[Ljava/lang/String;
+	public abstract fun name ()Ljava/lang/String;
+}
+
+public abstract interface annotation class dev/ribod/storestudio/annotations/StoreScreenshot : java/lang/annotation/Annotation {
+	public abstract fun devices ()[Ldev/ribod/storestudio/annotations/DeviceFamily;
+	public abstract fun id ()Ljava/lang/String;
+	public abstract fun locales ()[Ljava/lang/String;
+	public abstract fun name ()Ljava/lang/String;
+	public abstract fun order ()I
+	public abstract fun targets ()[Ldev/ribod/storestudio/annotations/StoreTarget;
+}
+
+public final class dev/ribod/storestudio/annotations/StoreTarget : java/lang/Enum {
+	public static final field APP_STORE Ldev/ribod/storestudio/annotations/StoreTarget;
+	public static final field PLAY_STORE Ldev/ribod/storestudio/annotations/StoreTarget;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Ldev/ribod/storestudio/annotations/StoreTarget;
+	public static fun values ()[Ldev/ribod/storestudio/annotations/StoreTarget;
+}
+

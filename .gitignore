@@ -1,0 +1,60 @@
+# Built application files
+*.apk
+*.aar
+*.aab
+
+# Gradle & Kotlin files
+.gradle/
+.kotlin/
+build/
+**/build/
+
+# Local configuration file (sdk.dir, secrets)
+local.properties
+
+# Log files
+*.log
+
+# OS-specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IntelliJ IDEA / Android Studio
+.idea/
+.intellijPlatform/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Android Studio / Gradle captures and traces
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Signing keys & secrets
+*.jks
+*.keystore
+*.p8
+secrets/
+*service-account*.json
+*play-key*.json
+*play-publisher*.json
+serviceAccount*.json
+*.pem
+*.p12
+*.key
+*credentials*.json
+
+# Store Studio: Baseline is tracked in git, but ignore generated cache and output
+**/.store/*
+!**/.store/baseline.json
+
+# Documentation site (Zensical)
+site/
+.venv/
